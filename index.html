@@ -1,0 +1,54 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaNote</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VaNote</h1>
+
+        <div id="auth-section">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Correo">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Iniciar Sesión</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+        </div>
+
+        <div id="register-section" style="display:none;">
+            <h2>Registrarse</h2>
+            <input type="text" id="reg-username" placeholder="Correo">
+            <input type="password" id="reg-password" placeholder="Contraseña">
+            <input type="text" id="nickname" placeholder="¿Cómo deseas que te llame?">
+            <button onclick="register()">Registrarse</button>
+            <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia Sesión</a></p>
+        </div>
+
+        <div id="note-section" style="display:none;">
+            <h2 id="welcome-message"></h2>
+            <div class="note-actions">
+                <button onclick="createNote()">Nueva Nota</button>
+                <button onclick="toggleTheme()">Modo Oscuro/Claro</button>
+            </div>
+
+            <div id="note-editor" style="display:none;">
+                <textarea id="note-input" placeholder="Escribe tu nota aquí..."></textarea>
+                <input type="date" id="note-date">
+                <button onclick="saveNote()">Guardar Nota</button>
+            </div>
+
+            <div id="notes-list">
+                <h3>Notas Guardadas</h3>
+                <!-- Las notas se generarán dinámicamente aquí -->
+            </div>
+        </div>
+
+        <footer>
+            <p>By IvanCodeSS</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
